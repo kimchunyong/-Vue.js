@@ -18,16 +18,27 @@ FormView.showResetBtn = function (show = true) {
 }
 
 FormView.bindEvents = function () {
+    this.on('submit', e => e.preventDefault());
     this.inputEl.addEventListener('keyup', (e) => this.onKeyup(e));
+    this.resetEl.addEventListener('click', (e) => this.onClick(e));
 }
 
 FormView.onKeyup = function (e) {
     const enter = 13;
     this.showResetBtn(this.inputEl.value.length);
+    if (!this.inputEl.value) {
+        this.emit('@reset');
+    }
     if (e.keyCode !== enter) {
         return;
     }
-    this.emit('@submit', { input: this.inputEl.value })
+    this.emit('@submit', { input: this.inputEl.value });
 }
+
+FormView.onClick = function (e) {
+    this.emit('@reset');
+    this.showResetBtn(false);
+}
+
 
 export default FormView;
