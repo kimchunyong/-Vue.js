@@ -31,5 +31,5 @@ export default {
 
     onSearchResult(data) {
         ResultView.render(data);
-    }
+    },
 }
