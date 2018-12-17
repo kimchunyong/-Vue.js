@@ -14,7 +14,7 @@ const data = [
 export default {
   list(query) {
     return new Promise(res => {
-      setTimeout(()=> {
+      setTimeout(() => {
         res(data)
       }, 200);
     })
