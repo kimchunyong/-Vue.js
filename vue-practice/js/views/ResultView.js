@@ -14,17 +14,16 @@ ResultView.render = function (data = []) {
 }
 
 ResultView.getSearchResultsHtml = function (data) {
-    return data.reduce((html, item) => {
-        console.log(item)
-        html += this.getSearchItemHtml(item);
+    return data.reduce((html, item, currentIndex) => {
+        html += this.getSearchItemHtml(item, currentIndex);
         return html;
-    }, '<ul>') + '<ul>'
+    }, '<ul>') + '</ul>'
 }
 
-ResultView.getSearchItemHtml = function (item) {
+ResultView.getSearchItemHtml = function (item, currentIndex) {
     return `<li>
         <img src="${item.image}">
-        <p>${item.name}</p>
+        <p>${currentIndex + 1}. ${item.name}</p>
     </li>`
 }
 
