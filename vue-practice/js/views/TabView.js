@@ -9,7 +9,7 @@ TabView.setup = function (el) {
 }
 
 TabView.setActiveTab = function (tabName) {
-    debugger
+    //debugger
     Array.from(this.el.querySelectorAll('li').forEach(li => {
         li.className = li.innerHTML === tabName ? 'active' : '';
     }))

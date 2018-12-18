@@ -14,7 +14,7 @@ export default {
         TabView.setup(document.querySelector('#tabs'));
         ResultView.setup(document.querySelector('#search-result'));
 
-        this.selectedTab = '추천 검색어';
+        this.selectedTab = '추천검색어';
         this.renderView();
     },
 
