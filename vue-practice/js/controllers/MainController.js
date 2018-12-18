@@ -26,7 +26,7 @@ export default {
     },
 
     onResetForm() {
-        ResultView.resetSearchResultsHtml();
+        ResultView.hide();
     },
 
     onSearchResult(data) {
