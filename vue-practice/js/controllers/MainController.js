@@ -9,9 +9,10 @@ export default {
     init() {
         FormView.setup(document.querySelector('form'))
             .on('@submit', e => this.onSubmit(e.detail.input))
-            .on('@reset', e => this.onResetForm());
+            .on('@reset', e => this.onActive())
 
-        TabView.setup(document.querySelector('#tabs'));
+        TabView.setup(document.querySelector('#tabs'))
+            .on('@change', e => this.onChangeTab(e.detail.tabName));
         ResultView.setup(document.querySelector('#search-result'));
 
         this.selectedTab = '추천검색어';
@@ -43,4 +44,8 @@ export default {
     onSearchResult(data) {
         ResultView.render(data);
     },
+
+    onChangeTab(tabName) {
+        console.log(tag, 'onChangeTab()', tabName);
+    }
 }

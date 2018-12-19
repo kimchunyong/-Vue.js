@@ -27,8 +27,4 @@ ResultView.getSearchItemHtml = function (item, currentIndex) {
     </li>`
 }
 
-ResultView.resetSearchResultsHtml = function () {
-    this.el.innerHTML = '';
-}
-
 export default ResultView;
