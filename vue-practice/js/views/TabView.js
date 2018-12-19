@@ -27,10 +27,6 @@ TabView.bindClick = function () {
 TabView.onActive = function (tabName) {
     this.setActiveTab(tabName);
     this.emit('@change', { tabName })
-
-    Array.from(this.el.querySelectorAll('li')).forEach(li => {
-        li.className = li.innerHTML === tabName ? 'active' : '';
-    });
 }
 
 export default TabView;
