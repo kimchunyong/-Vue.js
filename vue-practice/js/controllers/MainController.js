@@ -9,7 +9,7 @@ export default {
     init() {
         FormView.setup(document.querySelector('form'))
             .on('@submit', e => this.onSubmit(e.detail.input))
-            .on('@reset', e => this.onActive())
+            .on('@reset', e => this.onResetForm())
 
         TabView.setup(document.querySelector('#tabs'))
             .on('@change', e => this.onChangeTab(e.detail.tabName));
@@ -43,9 +43,10 @@ export default {
 
     onSearchResult(data) {
         ResultView.render(data);
+        //ResultView.show();
     },
 
     onChangeTab(tabName) {
-        console.log(tag, 'onChangeTab()', tabName);
+        console.log(tag, 'onChnageTab()', tabName)
     }
 }
