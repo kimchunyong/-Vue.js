@@ -20,6 +20,7 @@ export default {
         ResultView.setup(document.querySelector('#search-result'));
 
         KeywordView.setup(document.querySelector('#searh-keyword'))
+            .on('@click', e => this.onClickKeyword(e.detail.keyword));
 
         this.selectedTab = '추천검색어';
         this.renderView();
@@ -66,5 +67,9 @@ export default {
 
     onChangeTab(tabName) {
         console.log(tag, 'onChnageTab()', tabName)
+    },
+
+    onClickKeyword(keyword) {
+        debugger
     }
 }
