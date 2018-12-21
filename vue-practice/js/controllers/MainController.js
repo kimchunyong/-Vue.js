@@ -62,7 +62,7 @@ export default {
 
     onSearchResult(data) {
         ResultView.render(data);
-        //ResultView.show();
+        ResultView.show();
     },
 
     onChangeTab(tabName) {
@@ -70,6 +70,6 @@ export default {
     },
 
     onClickKeyword(keyword) {
-        debugger
+        this.search(keyword);
     }
 }
