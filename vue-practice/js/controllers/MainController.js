@@ -61,8 +61,10 @@ export default {
     },
 
     onSearchResult(data) {
+        TabView.hide();
+        KeywordView.hide();
         ResultView.render(data);
-        ResultView.show();
+
     },
 
     onChangeTab(tabName) {
