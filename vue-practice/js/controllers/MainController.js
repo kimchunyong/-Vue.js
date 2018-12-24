@@ -46,6 +46,7 @@ export default {
 
     search(query) {
         console.log(tag, 'search()', query);
+        FormView.setValue(query)
         SearchModel.list(query).then(data => {
             this.onSearchResult(data);
         })
@@ -54,6 +55,7 @@ export default {
     onSubmit(input) {
         console.log(tag, 'onSubmit()', input);
         this.search(input);
+
     },
 
     onResetForm() {
