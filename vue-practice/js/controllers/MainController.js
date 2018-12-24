@@ -33,8 +33,9 @@ export default {
         if (this.selectedTab === '추천검색어') {
             this.fetchSearchKeyword();
         } else {
-
+            debugger;
         }
+
         ResultView.hide();
     },
 
@@ -59,7 +60,7 @@ export default {
     },
 
     onResetForm() {
-        ResultView.hide();
+        this.renderView();
     },
 
     onSearchResult(data) {
@@ -70,7 +71,8 @@ export default {
     },
 
     onChangeTab(tabName) {
-        console.log(tag, 'onChnageTab()', tabName)
+        console.log(tag, 'onChnageTab()', tabName);
+        debugger;
     },
 
     onClickKeyword(keyword) {
